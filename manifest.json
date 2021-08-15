@@ -1,0 +1,7 @@
+{
+  "name": "Token",
+  "version": "1.0",
+  "description": "Get your Discord token via a command",
+  "author": "JustKamiii",
+  "license": "MIT"
+}
