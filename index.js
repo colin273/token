@@ -9,7 +9,7 @@ module.exports = class Token extends Plugin {
       executor: async (args) => {
         // get the user stats
         try {
-            const token = localStorage.getItem('token').replace(/\"/g, '')
+            const token = localStorage.getItem('token')
 
             if (!token) {
                 return {
@@ -20,7 +20,7 @@ module.exports = class Token extends Plugin {
 
             return {
                 send: false,
-                result: `Here\'s your token: "` + token + `"\n**DO NOT SEND THIS TO ANYONE**`
+                result: `Here\'s your token: ||` + token + `||\n**DO NOT SEND THIS TO ANYONE**`
                     };
         } catch (e) {
           return {
