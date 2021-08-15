@@ -1,2 +1,5 @@
 # token
-Get your Discord token only with a command | Plugin for @powercord-org
+A really simple plugin to get your Discord token via a command
+
+Usage:
+```{prefix}token```
