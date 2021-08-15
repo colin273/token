@@ -33,6 +33,6 @@ module.exports = class Token extends Plugin {
   }
 
   pluginWillUnload() {
-    powercord.api.commands.unregisterCommand("Token");
+    powercord.api.commands.unregisterCommand("token");
   }
 }
