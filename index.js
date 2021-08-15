@@ -6,22 +6,22 @@ module.exports = class Token extends Plugin {
       command: "token",
       description: "Get your Discord token via a command",
       usage: "{c}",
-      executor: async (args) => {
-        // get the user stats
+      executor: () => {
+        // get the user token
         try {
-            const token = localStorage.getItem('token')
-
-            if (!token) {
-                return {
-                    send: false,
-                    result: "Whoops! We couldn\'t find your token",
-                    }
-                        }
-
+          const token = localStorage.getItem("token")?.replace(/\"/g, "")
+          
+          if (!token) {
             return {
-                send: false,
-                result: `Here\'s your token: ||` + token + `||\n**DO NOT SEND THIS TO ANYONE**`
-                    };
+              send: false,
+              result: "Whoops! I couldn\'t find your token.",
+            }
+          }
+          
+          return {
+            send: false,
+            result: "Here\'s your token: ||\`" + token + "\`||\n**DO NOT SEND THIS TO ANYONE**"
+          };
         } catch (e) {
           return {
             send: false,
@@ -31,8 +31,8 @@ module.exports = class Token extends Plugin {
       },
     });
   }
-
+  
   pluginWillUnload() {
-    powercord.api.commands.unregisterCommand("Token");
+    powercord.api.commands.unregisterCommand("token");
   }
 }
