@@ -23,7 +23,7 @@ module.exports = class Token extends Plugin {
           
           return {
             send: false,
-            result: "Here\'s your token: ||\`" + token + "\`||\n**DO NOT SEND THIS TO ANYONE**"
+            result: "Here\'s your token: ||\n`" + token + "\`||\n**DO NOT SEND THIS TO ANYONE**"
           };
         } catch (e) {
           this.error(e);
